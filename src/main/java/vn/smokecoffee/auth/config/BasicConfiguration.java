@@ -1,4 +1,4 @@
-package vn.smokecoffee.auth.controller;
+package vn.smokecoffee.auth.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -9,8 +9,8 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.crypto.factory.PasswordEncoderFactories;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
-@Configuration
-@EnableWebSecurity
+//@Configuration
+//@EnableWebSecurity
 public class BasicConfiguration extends WebSecurityConfigurerAdapter {
 	public static final String USER_ROLE = "USER";
 
@@ -20,7 +20,7 @@ public class BasicConfiguration extends WebSecurityConfigurerAdapter {
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 
 		PasswordEncoder passwordEncoder = PasswordEncoderFactories.createDelegatingPasswordEncoder();
-		auth.inMemoryAuthentication().withUser("Khan").password(passwordEncoder.encode("password2")).roles("USER").and()
+		auth.inMemoryAuthentication().withUser("Khan").password(passwordEncoder.encode("password2")).roles(USER_ROLE).and()
 				.withUser("KhanAdmin").password(passwordEncoder.encode("KhanAdmin")).roles(USER_ROLE, ADMIN_ROLE);
 		// super.configure(auth);
 	}
