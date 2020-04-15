@@ -1,5 +1,6 @@
 package vn.smokecoffee.auth;
 
+import org.springframework.boot.Banner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration;
@@ -8,7 +9,12 @@ import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfi
 public class AuthApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(AuthApplication.class, args);
+		// SpringApplication.run(AuthApplication.class, args);
+		SpringApplication app = new SpringApplication(AuthApplication.class);
+		app.setLogStartupInfo(false);
+		app.setBannerMode(Banner.Mode.OFF);
+
+		app.run(args);
 	}
 
 }

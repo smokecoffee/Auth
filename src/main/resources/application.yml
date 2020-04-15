@@ -1,3 +1,5 @@
 server:  
   port: 8083
   servlet:    context-path: /auth
+spring:
+  main:    lazy-initialization: true
