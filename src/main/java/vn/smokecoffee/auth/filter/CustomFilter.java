@@ -1,5 +1,6 @@
-package vn.smokecoffee.auth.config;
+package vn.smokecoffee.auth.filter;
 
+import org.springframework.stereotype.Component;
 import org.springframework.web.filter.GenericFilterBean;
 
 import javax.servlet.FilterChain;
@@ -8,6 +9,8 @@ import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import java.io.IOException;
 
+
+@Component
 public class CustomFilter extends GenericFilterBean {
 
 	@Override

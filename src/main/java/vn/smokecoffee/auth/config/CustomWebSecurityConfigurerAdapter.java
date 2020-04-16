@@ -11,8 +11,10 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.www.BasicAuthenticationFilter;
 
-@EnableWebSecurity
-@Configuration
+import vn.smokecoffee.auth.filter.CustomFilter;
+
+//@EnableWebSecurity
+//@Configuration
 public class CustomWebSecurityConfigurerAdapter extends WebSecurityConfigurerAdapter {
 	public static final String USER_ROLE = "USER";
 
